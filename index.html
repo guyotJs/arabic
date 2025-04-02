@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Arabic Breakdown</title>
+  <link rel="icon" type="image/x-icon" href="https://guyotjs.github.io/duckclear2.png"/>
+  <link rel="stylesheet" href="https://guyotjs.github.io/bcss/bc.css"/>
+</head>
+  <body data="{val:'',final:''}">
+    <div class="true-center">
+      <input class="p-m r border-gray gray" type="text" bind="val" placeholder="Write your Arabic here!"/>
+      <button class="r p-m border-gray bg-white gray" onclick="$$()">&nbsp;א&nbsp;</button>
+      <br/><br/><p class="text-center true-sans gray" react>{{final}}</p>
+    </div>
+    <script>
+      let word = [];
+      let arabic = [['ء', 'Hamza'],['أ','Hamza \'Ala Alif'],['ة','Ta\' Marbuta'],['إ','Hamza Taht Alif'],['ئ','Hamza \' Ala Nabra'],['ا', 'Alif'],['ب', 'Bā'],['ت', 'Tā'],['ث', 'Thā'],['ج', 'Jīm'],['ح', 'Hā'],['خ', 'Khā'],['د', 'Dāl'],['ذ', 'Dhāl'],['ر', 'Rā'],['ز', 'Zāy'],['س', 'Sīn'],['ش', 'Shīn'],['ص', 'Ṣād'],['ض', 'Ḍād'],['ط', 'Ṭā'],['ظ', 'Ẓā'],['ع', 'ʿayn'],['غ', 'Ghayn'],['ف', 'Fā'],['ق', 'Qāf'],['ك', 'Kāf'],['ل', 'Lām'],['م', 'Mīm'],['ن', 'Nūn'],['ه', 'Hā'],['و', 'Waw'],['ي', 'Yā']]; 
+      
+      function $$(){
+        word = [];
+        data.final = "";
+        for(let i=0;i<data.val.length;i++){
+          word.push(data.val[i]);
+        }
+        for(let i=0;i<word.length;i++){
+          for(let z=0;z<arabic.length;z++){
+            if(word[i]==arabic[z][0]){
+              data.final+=`${arabic[z][0]} : ${arabic[z][1]}<br/>`
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+  <script src='https://snojs.github.io/sno/crystal.js'></script>
+</html>
