@@ -10,15 +10,18 @@
 </head>
   <body data="{val:'',final:''}">
     <div class="true-center text-center">
-      <input class="p-m r border-gray gray m" type="text" bind="val" placeholder="Write your Arabic here!"/>
-      <button class="r p-m border-gray bg-white gray" onclick="$$()">&nbsp;א&nbsp;</button>
-      <br/><br/><p class="text-center true-sans gray" react>{{final}}</p>
+      <form>
+        <input class="p-m r border-gray gray m" type="text" bind="val" placeholder="Write your Arabic here!"/>
+        <button type="submit" class="r p-m border-gray bg-white gray" onclick="$$()">&nbsp;א&nbsp;</button>
+      </form>
+      <br/><br/><p class="text-center true-sans gray f-m" react>{{final}}</p>
     </div>
     <script>
       let word = [];
       let arabic = [['ء', 'Hamza'],['أ','Hamza \'Ala Alif'],['ة','Ta\' Marbuta'],['إ','Hamza Taht Alif'],['ئ','Hamza \' Ala Nabra'],['ا', 'Alif'],['ب', 'Bā'],['ت', 'Tā'],['ث', 'Thā'],['ج', 'Jīm'],['ح', 'Hā'],['خ', 'Khā'],['د', 'Dāl'],['ذ', 'Dhāl'],['ر', 'Rā'],['ز', 'Zāy'],['س', 'Sīn'],['ش', 'Shīn'],['ص', 'Ṣād'],['ض', 'Ḍād'],['ط', 'Ṭā'],['ظ', 'Ẓā'],['ع', 'ʿayn'],['غ', 'Ghayn'],['ف', 'Fā'],['ق', 'Qāf'],['ك', 'Kāf'],['ل', 'Lām'],['م', 'Mīm'],['ن', 'Nūn'],['ه', 'Hā'],['و', 'Waw'],['ي', 'Yā']]; 
       
       function $$(){
+        event.preventDefault();
         word = [];
         data.final = "";
         for(let i=0;i<data.val.length;i++){
